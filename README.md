@@ -12,11 +12,8 @@ This repository is intended to house programming tutorials for different functio
 
 ## C++ Lessons Outline
 0. Hello World
-    * Cornerstone of every programmer 
 1. Data Types and Pointers
-    * Basics of data types and their coordinating sizes along with pointers and references.
-2. Control Flow and Scope
-    * Using logic to control program execution and understanding the scope within which variables exist 
+2. Control Flow and Scope 
 3. Data Structure Basics
 4. Functions and Instruction Sets
 5. Intro to Object Oriented Programming
