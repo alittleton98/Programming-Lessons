@@ -30,4 +30,4 @@ This repository is intended to house programming tutorials for different functio
 
  
 
-+ This is subject to change should someone request it
++This is subject to change should someone request it
