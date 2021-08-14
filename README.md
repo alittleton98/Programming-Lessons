@@ -12,4 +12,4 @@
 8. Data Structures and Algorithms
 9. Advanced Data Structures and Algorithms
 10. Advanced C++ Topics: Memory and Stremaing
-12. Advanced C++ Topics: Multithreading and Operating Systems
+11. Advanced C++ Topics: Multithreading and Operating Systems
