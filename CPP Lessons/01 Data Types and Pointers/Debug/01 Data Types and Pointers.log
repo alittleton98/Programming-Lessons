@@ -1,0 +1,8 @@
+﻿  Lesson 01.cpp
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(14,7): warning C4101: 'Boolean': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(20,10): warning C4101: 'WideCharacter': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(17,8): warning C4101: 'FloatingPoint': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(18,9): warning C4101: 'DoubleFloatingPoint': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(16,6): warning C4101: 'Integer': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(15,7): warning C4101: 'Character': unreferenced local variable
+  01 Data Types and Pointers.vcxproj -> D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\Debug\01 Data Types and Pointers.exe

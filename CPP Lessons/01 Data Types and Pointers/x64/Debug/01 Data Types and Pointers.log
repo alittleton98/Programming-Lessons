@@ -1,0 +1,4 @@
+﻿  Lesson 01.cpp
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(58,24): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\01 Data Types and Pointers\Lesson 01.cpp(21,10): warning C4101: 'WideCharacter': unreferenced local variable
+  01 Data Types and Pointers.vcxproj -> D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\x64\Debug\01 Data Types and Pointers.exe
