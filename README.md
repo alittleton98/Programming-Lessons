@@ -1,7 +1,7 @@
 # Programming-Lessons
 
 
-This repository is intended to house programming tutorials for different functional languages (not designed for a specific purpose or discipline. eg. HTML/CSS = front end, SQL = database/query, etc.+) and concepts. It builds on the foundations of a common university Computer Science curriculum. It is meant to cover in breadth and not depth. Those wanting to are welcome to contribute! Feel free to fork and add lessons, repair lessons already present, or propose the introduction of things you want to know.
+This repository is intended to house programming tutorials for different functional languages (not designed for a specific purpose or discipline. eg. HTML/CSS = front end web dev, SQL = database/query, etc.+) and concepts. It builds on the foundations of a common university Computer Science curriculum. It is meant to cover in breadth and not depth. Those wanting to are welcome to contribute! Feel free to fork and add lessons, repair lessons already present, or propose the introduction of things you want to know.
 
 ## Languages Covered
 * C
