@@ -1,0 +1,4 @@
+﻿  Lesson 02.cpp
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\02 Control Flow\Lesson 02.cpp(72,7): warning C4101: 'bIsGlobalCountEven': unreferenced local variable
+D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\02 Control Flow\Lesson 02.cpp(71,7): warning C4101: 'bIsLocalCount10': unreferenced local variable
+  02 Control Flow.vcxproj -> D:\Users\Mordecai\Dev\Programming-Lessons\CPP Lessons\Debug\02 Control Flow.exe
