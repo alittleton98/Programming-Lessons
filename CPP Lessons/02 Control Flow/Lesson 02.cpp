@@ -9,13 +9,8 @@ This lesson covers the usage of control flow and scope principles used.
 */
 #include <iostream>
 #include <stdlib.h>
+#include <vector>
 
-//Function declaration to demonstrate scope execution. Functions as a whole will be covered later.
-void UpdateCount();
-
-// Global variable declarations are made outside of functions. This allows them to be accessed from all executable code blocks within this program
-int GlobalCount = 0; 
-int GlobalMaxCount; // This variable will be compared to the LocalMaxCount defined inside main
 
 
 int main() {
@@ -52,8 +47,8 @@ int main() {
 
 	*/
 
-	// Example 1
-	std::cout << "EXAMPLE 1 (Lines 53 to 66)" << std::endl;
+	// Example 2a
+	std::cout << "EXAMPLE 2a (Lines 53 to 66)" << std::endl;
 	const int NumberToBeEvaluated = 13;
 	if (NumberToBeEvaluated == 0) { // Check if condition evaluates to true
 		// Execute statement if True
@@ -77,11 +72,12 @@ int main() {
 	// This operator is helpful when replacing if-else conditionals that only execute a single line of code or are performing value assignments such as the example below
 
 	// Example 2
-	std::cout << "EXAMPLE 2 (Lines )" << std::endl;
+	std::cout << "EXAMPLE 2b (Lines 81 to 84)" << std::endl;
 	int NumberToBeEvaluatedByTernary = 15;
 	bool bVarToBeAssignedTo;
 
 	bVarToBeAssignedTo = (NumberToBeEvaluatedByTernary % 5 == 0) ? true : false;
+	std::cout << "Result of the ternary operation is " << bVarToBeAssignedTo << std::endl;
 	/*
 	The above conditional is equivalent to:
 
@@ -110,23 +106,25 @@ int main() {
 	}
 	*/
 
-	// The switch statement is the equivalent of an if, multiple else if statmments, and and else statement. The "default" keyword within the switch represents "default" functionality and executes on no conditions. The switch statement is helpful when different values or ranges of values need to be evaluated and executed upon
+	// The switch statement is the equivalent of an if, multiple else if statmments, and and else statement. The "default" keyword within the switch represents "default" functionality and executes on no conditions. The switch statement is helpful when different values or ranges of values need to be evaluated and executed upon. Keep in mind that each subsequent case will be executed (excluding the default) when a matching case is found so a "break" statement is necessary if the programmer only wants one case exectuted per call.
 
 	// Example 3
-	std::cout << "EXAMPLE 3" << std::endl;
+	std::cout << "EXAMPLE 2c (Lines 117 to 127)" << std::endl;
 	int a = 10;
 	int b = 15;
 
 	switch (a) {
 		case 10:
 			std::cout << "Switch outputted the 10 case" << std::endl; // This will be the case that executes becuase a == 10 is True
+			break;
 		case 15:
 			std::cout << "Switch outputted the 15 case" << std::endl; 
+			break;
 		default:
 			break; // The default functionality is ignored because one of the cases was true
 	}
 		
-	// Conditionals are the foundation of a different control flow practice called Loops. A loop does as its name implies and performs an action until a condition is satisfied. There two main types of loops: For and While. Both of these have their own variations that we will discuss.
+	// Conditionals are the foundation of a different control flow practice called Loops. A loop does as its name implies and performs an action until a condition is satisfied. There two main types of loops: For and While. Both of these have their own variations that we will discuss. Some important keywords to note are the "continue" and "break" keywords. "continue is used when the program should skip any remaining operations within the loop and move on to the next iteration. "break" is used when the program shoudl exit the loop entirely and move on to the rest of the code.
 	
 	// The while loop operates under a framework that can be described as "perform WHILE such condition is True". This is an effective loop when individual instances of the loop don't need to be accessed and an evaluatuation just needs to be performed until a condition is met. Its normal synatax is as follows:
 
@@ -140,25 +138,72 @@ int main() {
 	
 	/*
 		do{
-			<STATEMENT TO BE EXECUTED WHILE CONDITIONAL IS TRUE AND ONCE PRIOR TO EVALUATION
+			<STATEMENT TO BE EXECUTED WHILE CONDITIONAL IS TRUE AND ONCE PRIOR TO CONDITIONAL EVALUATION>
 		} while (<CONDITIONAL STATEMENT TO BE EVALUATED>);
 	*/
 	
+	// The do-while is especially helpful when the condition to be evaluated requires a variable that must have the same operation performed on it before the initial evaluation by the conditional. Rather than having to write the operation code twice (once outside the loop to establish initial evaluation conditions and once inside the loop as the evaluation operation) the code can be written once. This can be thought of as "DO this and DO it again WHILE certain condition is true" 
 
-	// Variable declarations that are local only to the main function
-	int LocalCount = 0;			// The Count variable that is local to the main function
-	const int LocalMaxCount = 50;	// The maximum number any of the count variables can reach. This will be compared to the GlobalMaxCount
-	bool bIsLocalCount10;		// Boolean variable to be evaluated. Is intended to return True if the LocalCount variable is 10
-	bool bIsGlobalCountEven;	// Boolean variable to be evaluated. Is intended to return True if the GlobalCount variable is an even number
+	// Example 2d
+	std::cout << "EXAMPLE 2d (Lines 152 to 160)" << std::endl;
+	int DoWhileCounter = 0;
+	int Data = 1;
+	const int BinaryPower = 2;
+	do {
+		// Perform this operation once and then again as long the condition is met. The 
+		Data*= BinaryPower; // Raise the value within data by a power of two
+		DoWhileCounter++; // Iterate the counter by 1 to represent the number of times multiplied (addition operation is used to prevent exponential growth and perform what is essentially algebraic multiplcation. Formula: log(base2) of USHRT_MAX-15 = x where x = DoWhileCounter. DoWhileCounter will only be known at completion)
+	} while (Data < (USHRT_MAX/2) + 1); // Repeat the process until Data is equal to 65520. NOTE: 15 is subtracted from the short's maximum because the maximum is not an even multiple of 16. This is the case with all extreme boundary values for any numerically based type as described in Lesson 01 
+	std::cout << "16 can be multiplied " << DoWhileCounter << " times within the signed short's maximum positive value + 1" << std::endl; 
+	//The above example should produce the number 4095 because 65520/16 = 4095
 
+	// The for loop is probably one of the more common loops used in programming because it uses a 3 statement structure combining the unqiue features of all the prior control flow statements. The for loop is written as follows:
+	/*
+		for (<INITIALIZATION STATEMENT TO BE EXECUTED ONCE BEFORE THE CODE BLOCK>; <CONDITIONAL EVALUATION>; <STATEMENT TO BE EXECUTED AFTER EACH COMPLETION OF THE CODE BLOCK>;){
+			<CODE BLOCK TO BE EXECUTED>
+		}
+
+		Another version of the for loop is the for-each loop. This version of the for loop is primarily for data structure operations and is meant for operations to be done on every element of the structure. The for each doesn't use an initializtion or increment/decrements common in the regular for loop. A for each is written as follows:
+
+		for (<DATATYPE> <VAR NAME> : <DATA STRUCTURE>){
+			<CODE BLOCK TO BE EXECUTED>
+		}
+
+		The for loop is primarily used on data structures of some kind or when a procedural iteration is necessary. In the above templates, an element variable is used. The initialization statment in the traditional for loop establishes the initial index value (like the count variables used in previous examples). The for each loop doesn't use an index value, but instead references the element of a data structure directly. (There will be more about data structures in the next lesson).
+	*/
+
+	// Example 2e 
+	std::cout << "EXAMPLE 2e ()" << std::endl;
+	// Declare array of 10 integers with populated values
+	int MyArrayOfInts[10] = { 0,1,2,3,4,5,6,7,8,9 };
+
+	// Create index variable and initialize to 0 (beginning of the array). Set the condition to ensure the index value is less than the size of the array (sizes are measured as rational so indexing is always size -1). Increment the index by 1
+	for (int i = 0; i < 10; i++) {
+		// NOTE: The syntax for accessing elements of arrays and some other data structures is <ARRAY NAME>[<INDEX NUMBER>]. Element access for data strcutures will be covered in detail in future lessons.
+		if (i % 2 == 0 /* && i != 8 */) { // Check if index is even. Try including the commented out part of the if statement and see what changes
+			MyArrayOfInts[i] += 7; // Add 7 to each element accessed
+		}
+		else if (i == 8) { // Check if at end of array
+			break; // Exit the loop if true
+
+			// The break will end the loop early despite the initial condition in the for loop statement
+		}
+		else {
+			continue; // Continue to next iteration of loop if no conditions are met
+
+			// The continue will instruct the code to skip over this iteration logically because the index is an odd number 
+		}
+	}
+
+	// For Each int x in the array, print it followed by a space
+	for (int x : MyArrayOfInts) {
+		std::cout << x << " ";
+	}
+	std::cout << std::endl; // Carraige returns after completion of example
+	// The traditional for loop doesn't need to operate in a forward direction all the time. Operation on the index variable can increment, decrement, or procedurally hop around the structure if the programmer finds that to be necessary. Notice the change when the array is printed if the commented portion of line 183 is included. Observe the difference in output. The 8th element will be 8 instead of 15. The intended behavior of the loop is implied by the logical conditions present, but even though the i == 8 condition IS TRUE, it is out of sequence. The condition i %2 =0 evaluates true first so it takes precedance and thus the condition skips the latter options. There are two remedies for this logical problem: Adding an extra condition to the initial case OR reorganizing the sequence of conditions. Both options work, but the former is unique only to the present problem and can lead to overcomplications. The latter will make your code easier to read and understand to other programmers as well as the compiler. Writing a conditional in a linear fashion using a scheme that operates in descending order of liklihood will produce expected behavior more often. With C++ operating as a sequential language, writing code that works effectively top->down is best.   
+
+	// NOTE: It is VERY IMPORTANT to ensure that your index variable DOES NOT exceed the boundaries of the structure or the compiler will throw a Runtime OutOfBounds Exception. 
 
 	return 0;
 }
 
-void UpdateCount() {
-	// Variable declarations that are local only to the UpdateCount() function
-	int FunctionCountingFactor = 3; // Variable is the addition factor that Count variable will increase by.
-	GlobalMaxCount = FunctionCountingFactor * 10; // Programmatically defines the number any of the count variables can reach
-
-	GlobalCount += FunctionCountingFactor;
-}

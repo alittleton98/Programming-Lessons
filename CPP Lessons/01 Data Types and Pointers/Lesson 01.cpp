@@ -18,7 +18,7 @@ int main() {
 	float FloatingPoint; //Numerical data type designed with 32bit precision. Reasonably precise for most applications
 	double DoubleFloatingPoint; //Numerical data type designed with 64bit precision. Exceptionally precise but also twice the size of the float
 	void Valueless(); //Void is a valueless identifier used with functions and pointers to indicate that the function will not be returning a variable of any type or to identify that the pointer can hold the address of any variable agnostic of type
-	wchar_t WideCharacter; //Data type capable of holding 65536 different characters. It is the UNICODE standard so encoding characters from virtually any language can be done
+	wchar_t WideCharacter; //Data type capable of holding 65535 different characters. It is the UNICODE standard so encoding characters from virtually any language can be done
 
 	Boolean = false;
 	std::cout << "The Boolean variable is " << Boolean << " and it is " << sizeof(Boolean) << "bytes in size" << std::endl; //Notice what the printed line is
@@ -27,6 +27,14 @@ int main() {
 	Integer = 3274;
 	std::cout << "The Integer variable is " << Integer << " and it is " << sizeof(Integer) << "bytes in size" << std::endl;
 	
+	/*
+	Numeric types come in various different sizes and this gives the programmer more flexibilty when it comes to memory usage and extreme numerical boundaries
+	used. The extremes boundaries are always the 2^BitSize - 1. For signed numeric types the extremes are +- (2^BitSize)/2 - 1. Subtracting 1 is done because of
+	place value operations in the binary representation of data. Computer memory uses transitors set to an "On" (1) or "Off" (0) position for each bit of data
+	representing a power of two. Visually, this is presented as:
+	[2^n]...[2^7][2^6][2^5][2^4][2^3][2^2][2^1][2^0]
+	With this visual representation in mind, notice that counting starts from the 0 exponent because 2^0 = 1. Counting in this fashion is done in the same way as any other base. Each place's max value is always BaseNumber^PlaceValue - 1 because BaseNumber^PlaceValue is represented with an additional spot due to the inclusion of 0. Place values determine the number of values possible within that place and 0 must always be included in that so subtracting 1 accounts for this. Referring back to memory usage in computing, numeric types are bounded by the same place value rules. An unsigned 16 bit integer's number of possible values is 65536, but one of those must be 0, so there are 65535 possible positive values. Signed types follow the same rule except the number of possible rational numbers (recall that a rational number is any non-zero real number) is distrubuted evenly around 0 (ie 65535 distrubuted evenly about 0 is [-32767, 32767])
+	*/
 	
 	//Take note of what the output in the console looks like vs the actual value
 	FloatingPoint = 19.385728493f;
